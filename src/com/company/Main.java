@@ -1,6 +1,6 @@
 package com.company;
 
-import static java.lang.VersionProps.print;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -9,15 +9,18 @@ public class Main {
         createObject("Daughter").print();
     }
     public static Granny createObject(String className) {
-        print (className.equals("Mother")); {
-            return new Mother("Jeni", 41, "Police");
-        } else print (className.equals("Son")); {
-            return new Son("Arnold Schwarzenegger", 15, "shit");
-        } else print  (className.equals("Daughter")); {
-            return new Daughter("Mammon", 3, "Paradise");
-        } else {
-            return null;
+        switch (className){
+            case "Mother":
+                Mother mother = new Mother("Jeni", 41, "police");
+                return mother;
+            case "Daughter":
+                Daughter daughter = new Daughter("Loli", 4, "heaven");
+                return daughter;
+            case "Son":
+                Son son = new Son("Ari", 8, "colony");
+                return son;
         }
+        return null;
     }
 
 
